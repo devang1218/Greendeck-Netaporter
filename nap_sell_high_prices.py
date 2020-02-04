@@ -3,16 +3,16 @@
 import json
 import pandas as pd
 
-product_json=[]
-with open('dumps/netaporter_gb_similar.json') as fp:
-    for product in fp.readlines():
-        product_json.append(json.loads(product))
-df=pd.read_json("dumps/netaporter_gb_similar.json",lines=True,orient='columns')
-
-#website_id's other than NAP    
-l = ['5da94f4e6d97010001f81d72', '5da94f270ffeca000172b12e', '5d0cc7b68a66a100014acdb0', '5da94ef80ffeca000172b12c', '5da94e940ffeca000172b12a']
-
 def nap_sell_high_prices(query):
+    product_json=[]
+    with open('dumps/netaporter_gb_similar.json') as fp:
+        for product in fp.readlines():
+            product_json.append(json.loads(product))
+    df=pd.read_json("dumps/netaporter_gb_similar.json",lines=True,orient='columns')
+
+    #website_id's other than NAP    
+    l = ['5da94f4e6d97010001f81d72', '5da94f270ffeca000172b12e', '5d0cc7b68a66a100014acdb0', '5da94ef80ffeca000172b12c', '5da94e940ffeca000172b12a']
+
     nap_id=[]
     #list to input NaN so not to encounter any error in future
     p=[]
