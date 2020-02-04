@@ -3,13 +3,13 @@
 import json
 import pandas as pd
 
-product_json=[]
-with open('dumps/netaporter_gb_similar.json') as fp:
-    for product in fp.readlines():
-        product_json.append(json.loads(product))
-df=pd.read_json("dumps/netaporter_gb_similar.json",lines=True,orient='columns')
-
 def nap_sell_n_high_x(query): 
+    
+    product_json=[]
+    with open('dumps/netaporter_gb_similar.json') as fp:
+        for product in fp.readlines():
+            product_json.append(json.loads(product))
+    df=pd.read_json("dumps/netaporter_gb_similar.json",lines=True,orient='columns')
 
     #list to input NaN so not to encounter any error in future
     p=[]
